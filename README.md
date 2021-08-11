@@ -13,3 +13,5 @@ https://www.youtube.com/watch?v=6CQ7DYni7Bg
 https://github.com/codegridweb/Pure-CSS-Parallax-Effect-No-Javascript
 
 https://the-goonies.webflow.io/
+
+https://gomakethings.com/how-to-create-a-sticky-navigation-with-only-css/
