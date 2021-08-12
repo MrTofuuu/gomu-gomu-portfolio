@@ -1,10 +1,31 @@
 /* Variables */
 :root {
     --primary-color: antiquewhite;
+    --accent-color: red;
+    --outer-space: #33393f;
+    --bright-turquoise: #2aefcb;
+    --gin: #e0eae4;
+    --heliotrope: #e866ec;
 
 }
+
+
+/* set content highlight color and background */
+::selection {
+    background-color: var(--bright-turquoise);
+    color: var(--outer-space);
+}
+
+@font-face {
+    font-family: 'TreasureMap';
+    src: url('../fonts/treasuremap.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/treasuremap.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/treasuremap.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/treasuremap.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/treasuremap.svg') format('svg'); /* Legacy iOS */
+}
 /* Global styling */
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -14,15 +35,17 @@
 
 /* HTML element styles */
 html {
-    height: 100%;
-    overflow: hidden;
+    /* height: 100%;
+    overflow: hidden; */
 }
 body {
+    /* parallax effect block
     height: 100%;
     perspective: 1px;
     transform-style: preserve-3d;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden; */
+    
 }
 
 
@@ -33,13 +56,23 @@ header {
     position:relative;
     transform-style: inherit;
     width:100vw;
+    
+    
 }
 
+header > * {
+    color:var(--primary-color);
+    font-family: "";
+    text-shadow: 1px 1px 2px black;
+}
 header h1 {
     margin-top: -100px;
-    float:left;
+    text-align: center;
+    font-family: 'TreasureMap';
+    font-size: 50px;
 }
 
+/* parallax effect code block
 header, header::before {
     background: 50% 50% / cover;
 }
@@ -59,8 +92,9 @@ header::before {
     transform: translateZ(-1px) scale(2);
     z-index: -1;
     min-height: 100vh;
+    
 
-}
+} */
 nav {
     padding-top: 15px;
     margin-right: 20px;
@@ -71,12 +105,16 @@ nav {
 
 nav ul {
     list-style-type: none;
+    text-align: center;
 }
 
 nav ul li {
     display: inline-block;
     margin-left: 25px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
 }
+
 
 
 /* classes */
@@ -102,16 +140,170 @@ nav ul li {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.content {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+}
+.about-me {
+    /* margin-bottom:20px; */
+    padding:1%;
+    height:300px;
+    background-color:red;
+
+}
+
+.about-me img {
+    display:block;
+    margin: 10px;
+    max-width: 150px;
+}
+
+.about-me h1 {
+    /* float:left; */
+    font-family: 'TreasureMap';
+    font-size: 50px;
+    margin:1%;
+}
+
+
 
 main {
-    z-index: 2;
-    position: absolute;
-    top: 100vh;
+    
+    /* position: absolute; */
     background: black;
     line-height: 30px;
-    padding: 40px;
+    padding: 5px;
     color: grey;
 }
+/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top:25px;
+    margin-left: -.25rem;
+    margin-right: -.25rem;
+}
+  
+.justify-center {
+    justify-content: center;
+}
+/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+} 
+
+
+/* make each code card a flexbox column to align and justify content within it */
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--heliotrope);
+  
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--gin);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+  
+.code-card .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-space);
+    color: var(--heliotrope);
+    border: 2px solid var(--gin);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+  
+  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+    transform: scale(1.05);
+    
+}
+  
+  /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+.code-card .code-block {
+    flex-grow: 1;
+}
+  
+.code-card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: var(--gin);
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(
+      rgba(232, 102, 236, 0.3) 0%,
+      rgba(232, 102, 236, 0.6) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+  
+  /* on <pre> click, select all contents so the code is highlighted */
+.code-card pre:active {
+    user-select: all;
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+    .grow:hover { 
+    transform: scale(1.1); 
+    }
+  /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .card-column {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  
+    /* select the last child to grow to full width if it has space to grow */
+    .card-column:last-child {
+      flex-grow: 1;
+    }
+}
+  
+ /* media query for larger screens */
+@media screen and (min-width: 992px) {
+    header {
+      width: 100%;
+    }
+  
+    .card-column {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+ }
+.float-left {
+    float: left;
+    margin-left: 2%;
+}
+
+.float-right {
+    float: right;
+    margin-right: 2%;
+}
+
+  
 /* Turns off the parallax effect for tablets, mobile devices, or small screens */
 @media only screen and (max-device-width: 1366px) {
     .parallax {
