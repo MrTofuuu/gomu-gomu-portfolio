@@ -1,16 +1,18 @@
 /* Variables */
+
 :root {
     --primary-color: antiquewhite;
     --accent-color: red;
     --outer-space: #33393f;
     --bright-turquoise: #2aefcb;
     --gin: #e0eae4;
-    
-
+    --glow: gold;
+    --background-color: rgb(26, 26, 26);
 }
 
 
 /* set content highlight color and background */
+
 ::selection {
     background-color: var(--bright-turquoise);
     color: var(--outer-space);
@@ -18,114 +20,107 @@
 
 @font-face {
     font-family: 'TreasureMap';
-    src: url('../fonts/treasuremap.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/treasuremap.eot');
+    /* IE9 Compat Modes */
     src: url('../fonts/treasuremap.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/treasuremap.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/treasuremap.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/treasuremap.svg') format('svg'); /* Legacy iOS */
+    url('../fonts/treasuremap.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/treasuremap.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/treasuremap.svg') format('svg');
+    /* Legacy iOS */
 }
+
+
 /* Global styling */
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     color: var(--primary-color);
-
 }
+
 
 /* HTML element styles */
-html {
-    /* height: 100%;
-    overflow: hidden; */
-}
+
 body {
-    /* parallax effect block
-    height: 100%;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    overflow-y: scroll;
-    overflow-x: hidden; */
-    background: black;
-    
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.5em;
 }
 
 h2 {
     text-align: center;
     font-family: 'TreasureMap';
     font-size: 35px;
-    font-weight:300;
+    font-weight: 300;
     margin-top: 5%;
-
 }
+
 header {
-    /* padding:20px; */
     min-height: 100vh;
     padding: 30vw 0 5vw;
-    position:relative;
+    position: relative;
     transform-style: inherit;
-    width:100vw;
-    
-    
+    width: 100vw;
 }
 
-header > * {
-    color:var(--primary-color);
+header>* {
+    color: var(--primary-color);
     font-family: "";
     text-shadow: 1px 1px 2px black;
 }
+
 header h1 {
-    margin-top: -100px;
+    margin-top: -115px;
     text-align: center;
     font-family: 'TreasureMap';
     font-size: 50px;
 }
 
-/* parallax effect code block
-header, header::before {
-    background: 50% 50% / cover;
+header h2 {
+    margin-top: -115px;
+    text-align: center;
+    font-family: 'TreasureMap';
+    font-size: 40px;
 }
 
-header::before {
-    bottom: 0;
-    content:"";
-    left:0;
-    position:absolute;
-    right: 0;
-    top:0;
-    display:block;
-    background-image: url("../images/thousand-sunny.jpg");
-    background-size: cover;
-    background-position: center;
-    transform-origin: center center 0;
-    transform: translateZ(-1px) scale(2);
-    z-index: -1;
-    min-height: 100vh;
-    
-
-} */
 nav {
-    padding-top: 15px;
-    margin-right: 20px;
     justify-content: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
+    width: 100%;
+    height: 50px;
+    background: var(--background-color);
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    position: sticky;
 }
 
 nav ul {
-    list-style-type: none;
-    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0 100px;
+    float: right;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-left: 25px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 20px;
     text-decoration: none;
-    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 50px;
 }
 
 
-
 /* classes */
+
 .hero {
     height: 900px;
     width: 100%;
@@ -137,9 +132,10 @@ nav ul li {
 
 .sticky {
     position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+    position: sticky;
+    top: 0;
 }
+
 .parallax {
     background-image: url("../images/thousand-sunny.jpg");
     height: 100%;
@@ -148,74 +144,78 @@ nav ul li {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .content {
     display: inline-block;
     margin: 0;
     width: 100%;
 }
-.about-me {
-    /* margin-bottom:20px; */
-    padding:1%;
-    height:300px;
-    background-color:red;
 
+.about-me {
+    padding: 1%;
+    margin: 0 50px;
+    height: auto;
+    background-color: red;
 }
 
 .about-me img {
-    display:block;
+    display: block;
     margin: 10px;
     max-width: 150px;
+    float: left;
 }
 
 .about-me h1 {
-    /* float:left; */
+    text-align: center;
     font-family: 'TreasureMap';
     font-size: 50px;
-    margin:1%;
+    margin: 1%;
+    text-shadow: 1px 1px 2px black;
 }
 
-
-
 main {
-    
-    /* position: absolute; */
-    background: black;
-    line-height: 30px;
-    padding: 5px;
+    padding: 2%;
     color: grey;
 }
 
-main section h1 {
+section h1 {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
     font-size: 50px;
     font-family: 'TreasureMap';
 }
+
+
 /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+
 .row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-top:25px;
+    margin-top: 25px;
     margin-left: -.25rem;
     margin-right: -.25rem;
 }
-  
+
 .justify-center {
     justify-content: center;
 }
+
+
 /* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+
 .card-column {
     flex: 1 0 100%;
     padding: 1.5rem;
     /* when the screen resizes, make it so our columns don't jump in size */
     transition: flex-basis 500ms linear;
     margin-bottom: 1.5rem;
-} 
+}
 
 
 /* make each code card a flexbox column to align and justify content within it */
+
 .code-card {
     display: flex;
     flex-direction: column;
@@ -223,19 +223,20 @@ main section h1 {
     min-height: 100%;
     padding: 2rem;
     color: var(--primary-color);
-  
     /* outline is like border, but on the outside of the box instead of inside */
-    outline: 2px dashed var(--gin);
+    outline: 2px hidden var(--gin);
     outline-offset: -2px;
     transition: all 0.5s ease-in-out;
 }
 
-.code-card img{
+.code-card img {
     max-width: 525px;
 }
+
 .code-card .card-body {
     margin: auto;
-} 
+}
+
 .code-card .card-header {
     /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
     position: relative;
@@ -249,67 +250,105 @@ main section h1 {
 }
 
 
-  
-  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+/* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+
 .code-card:hover,
 .code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px var(--primary-color), 0 0 15px var(--primary-color);
+    box-shadow: inset 0px 0px 8px var(--glow), 0 0 15px var(--glow);
     transform: scale(1.05);
-    
 }
-  
-  /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+
+
+/* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+
 .code-card .code-block {
     flex-grow: 1;
 }
 
+
 /* grows item that uses this class */
-.grow { 
-    transition: all .2s ease-in-out; 
+
+.grow {
+    transition: all .2s ease-in-out;
 }
+
+
 /* grows on hover  */
-.grow:hover { 
-    transform: scale(1.1); 
+
+.grow:hover {
+    transform: scale(1.1);
 }
-  /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+
+footer {
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    background: var(--background-color);
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    position: sticky;
+}
+
+footer ul {
+    display: flex;
+    margin: 0;
+    padding: 0 100px;
+    float: left;
+}
+
+footer ul li {
+    list-style-type: none;
+}
+
+footer ul li a {
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+
 @media screen and (min-width: 768px) {
     /* on tablets, set columns to only be 50% of the width and not grow */
     .card-column {
-      flex: 0 0 50%;
-      max-width: 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
-  
     /* select the last child to grow to full width if it has space to grow */
     .card-column:last-child {
-      flex-grow: 1;
+        flex-grow: 1;
     }
 }
-  
- /* media query for larger screens */
+
+
+/* media query for larger screens */
+
 @media screen and (min-width: 992px) {
     header {
-      width: 100%;
+        width: 100%;
     }
-  
     .card-column {
-      flex: 0 0 33.333%;
-      max-width: 33.333%;
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
     }
- }
+}
+
 .float-left {
     float: left;
     margin-left: 2%;
 }
 
-.float-right {
-    float: right;
-    margin-right: 2%;
-}
 
-  
 /* Turns off the parallax effect for tablets, mobile devices, or small screens */
+
 @media only screen and (max-device-width: 1366px) {
     .parallax {
-      background-attachment: scroll;
+        background-attachment: scroll;
     }
-  }
+}
