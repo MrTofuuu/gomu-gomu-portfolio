@@ -76,14 +76,16 @@ header h1 {
     margin-top: -115px;
     text-align: center;
     font-family: 'TreasureMap';
-    font-size: 50px;
+    font-size: 35px;
+    line-height: 1.2em;
 }
 
 header h2 {
     margin-top: -115px;
     text-align: center;
     font-family: 'TreasureMap';
-    font-size: 40px;
+    font-size: 55px;
+    line-height: 1.2em;
 }
 
 nav {
@@ -95,13 +97,17 @@ nav {
     background: var(--background-color);
     border-top: 1px solid rgba(255, 255, 255, .2);
     border-bottom: 1px solid rgba(255, 255, 255, .2);
+    /* Sticky nav bar  */
     position: sticky;
+    top: 0;
+    /* keeps nav bar always at above everything  */
+    z-index: 9999;
 }
 
 nav ul {
-    display: flex;
+    display: -webkit-inline-box;
     margin: 0;
-    padding: 0 100px;
+    padding: 0 55px;
     float: right;
 }
 
@@ -120,15 +126,6 @@ nav ul li a {
 
 
 /* classes */
-
-.hero {
-    height: 900px;
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../images/thousand-sunny.jpg");
-    background-size: cover;
-    background-position: center;
-}
 
 .sticky {
     position: -webkit-sticky;
@@ -230,7 +227,7 @@ section h1 {
 }
 
 .code-card img {
-    max-width: 525px;
+    width: 100%;
 }
 
 .code-card .card-body {
@@ -315,6 +312,9 @@ footer ul li a {
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 
 @media screen and (min-width: 768px) {
+    header {
+        width: 100%;
+    }
     /* on tablets, set columns to only be 50% of the width and not grow */
     .card-column {
         flex: 0 0 50%;
@@ -339,16 +339,11 @@ footer ul li a {
     }
 }
 
-.float-left {
-    float: left;
-    margin-left: 2%;
-}
-
 
 /* Turns off the parallax effect for tablets, mobile devices, or small screens */
 
-@media only screen and (max-device-width: 1366px) {
+@media only screen and (max-device-width: 749px) {
     .parallax {
-        background-attachment: scroll;
+        background-attachment: inherit;
     }
 }
