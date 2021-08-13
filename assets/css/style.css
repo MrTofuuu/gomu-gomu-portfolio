@@ -5,7 +5,7 @@
     --outer-space: #33393f;
     --bright-turquoise: #2aefcb;
     --gin: #e0eae4;
-    --heliotrope: #e866ec;
+    
 
 }
 
@@ -45,10 +45,18 @@ body {
     transform-style: preserve-3d;
     overflow-y: scroll;
     overflow-x: hidden; */
+    background: black;
     
 }
 
+h2 {
+    text-align: center;
+    font-family: 'TreasureMap';
+    font-size: 35px;
+    font-weight:300;
+    margin-top: 5%;
 
+}
 header {
     /* padding:20px; */
     min-height: 100vh;
@@ -176,6 +184,13 @@ main {
     padding: 5px;
     color: grey;
 }
+
+main section h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 50px;
+}
 /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
 .row {
     display: flex;
@@ -206,30 +221,38 @@ main {
     justify-content: flex-start;
     min-height: 100%;
     padding: 2rem;
-    color: var(--heliotrope);
+    color: var(--primary-color);
   
     /* outline is like border, but on the outside of the box instead of inside */
     outline: 2px dashed var(--gin);
     outline-offset: -2px;
     transition: all 0.5s ease-in-out;
 }
-  
+
+.code-card img{
+    max-width: 500px;
+}
+.code-card .card-body {
+    margin: auto;
+} 
 .code-card .card-header {
     /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
     position: relative;
     margin: -4rem 0 1.5rem 0;
     padding: 0.5rem 1rem;
     background-color: var(--outer-space);
-    color: var(--heliotrope);
+    color: var(--primary-color);
     border: 2px solid var(--gin);
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
 }
+
+
   
   /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
 .code-card:hover,
 .code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+    box-shadow: inset 0px 0px 8px var(--primary-color), 0 0 15px var(--primary-color);
     transform: scale(1.05);
     
 }
@@ -238,36 +261,15 @@ main {
 .code-card .code-block {
     flex-grow: 1;
 }
-  
-.code-card pre {
-    /* set styles to make it so code wraps in <pre> instead of overflowing */
-    white-space: pre-wrap;
-    overflow: auto;
-    tab-size: 4;
-    padding: 1.2rem 1rem;
-    color: var(--gin);
-    border-radius: 8px;
-    /* use linear-gradient() function to create a fading background  */
-    background-image: linear-gradient(
-      rgba(232, 102, 236, 0.3) 0%,
-      rgba(232, 102, 236, 0.6) 100%
-    );
-    display: flex;
-    align-items: center;
-}
-  
-  /* on <pre> click, select all contents so the code is highlighted */
-.code-card pre:active {
-    user-select: all;
-}
 
+/* grows item that uses this class */
 .grow { 
     transition: all .2s ease-in-out; 
-    }
-    
-    .grow:hover { 
+}
+/* grows on hover  */
+.grow:hover { 
     transform: scale(1.1); 
-    }
+}
   /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
     /* on tablets, set columns to only be 50% of the width and not grow */

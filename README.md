@@ -15,3 +15,5 @@ https://github.com/codegridweb/Pure-CSS-Parallax-Effect-No-Javascript
 https://the-goonies.webflow.io/
 
 https://gomakethings.com/how-to-create-a-sticky-navigation-with-only-css/
+
+https://travis.media/how-to-make-an-item-grow-on-hover-with-css/
