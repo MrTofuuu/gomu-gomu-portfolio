@@ -190,6 +190,7 @@ main section h1 {
     padding-bottom: 20px;
     text-align: center;
     font-size: 50px;
+    font-family: 'TreasureMap';
 }
 /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
 .row {
@@ -230,7 +231,7 @@ main section h1 {
 }
 
 .code-card img{
-    max-width: 500px;
+    max-width: 525px;
 }
 .code-card .card-body {
     margin: auto;
