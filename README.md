@@ -19,15 +19,13 @@ Created a webpage that links to the projects I complete in the course. I current
 
 ## Screenshots
 
-
+![My Portfolio Page](./assets/images/portfolio.gif)
 
 ### **Links**
 
 [Link to the deployed website](https://mrtofuuu.github.io/portfolio/)
 
 [Link to the code repository](https://github.com/MrTofuuu/portfolio)
-
-
 
 
 ## Credits
