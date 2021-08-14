@@ -17,11 +17,17 @@ Created a webpage that links to the projects I complete in the course. I current
 
 
 
+## Screenshots
+
+
+
 ### **Links**
 
-[Link to the deployed website](https://mrtofuuu.github.io/horiseon-social-solution-services/)
+[Link to the deployed website](https://mrtofuuu.github.io/portfolio/)
 
-[Link to the code repository](https://github.com/MrTofuuu/horiseon-social-solution-services)
+[Link to the code repository](https://github.com/MrTofuuu/portfolio)
+
+
 
 
 ## Credits
